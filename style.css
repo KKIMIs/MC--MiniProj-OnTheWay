@@ -1,0 +1,309 @@
+:root {
+	/* 변수 선언 
+    **************** FONT VARIABLES **************** 
+    */
+
+	/* font-family */
+	--basic-font-family: roboto, sans-serif;
+	--logo-font-family: bely, serif;
+
+	/* font-style */
+	--logo-font-style: italic;
+
+	/* font-size */
+	--title-font-size: 90px;
+	--large-font-size-1: 40px;
+	--large-font-size-2: 30px;
+	--large-font-size-3: 22px;
+	--medium-font-size-1: 20px;
+	--medium-font-size-2: 18px;
+	--medium-font-size-3: 15px;
+	--small-font-size-1: 12px;
+
+	/* **************** COLOR VARIABLES ****************
+    */
+	/* 메인 요소 컬러 + 배경색  */
+	--main-color: #4f6083;
+	--main-bg-color: #fafafa;
+
+	/* 요소 배경색 */
+	--bg-color-gray: #f3f4f2;
+	--bg-color-lightBlue-1: #e1e8ef;
+	--bg-color-lightBlue-2: #ecf3f8;
+	--bg-color-blue-1: #AABDD0;
+	--bg-color-blue-2: #5e7ca0;
+
+	/* 기타 회색  */
+	--ct-color-gray-light: #c5c9ca;
+	--ct-color-gray-dark: #717171;
+
+	/* 그림자 속성 */
+	--basic-shadow: 0px 3px 6px #00000029;
+	--up-basic-shadow: 0px -3px 6px #00000029;
+	--bigger-shadow: 0px 15px 8px #00000029;
+
+	/* **************** SPACING VARIABLES **************** */
+	--super-space: 50px;
+	--large-space: 24px;
+	--medium-space: 10px;
+	--small-space: 6px;
+
+	--button-width: 110px;
+	--button-height: 30px;
+
+	/* **************** BORDER VARIABLES **************** */
+	--strong-radius: 20px;
+	--mild-radius: 8px;
+	--basic-line: 1px solid;
+	--bold-line:4px solid;
+	--dotted-lind:1px dotted;
+}
+
+
+/* * BASIC Settings *
+*/
+* {
+	/* 기본설정 */
+	font-family: var(--basic-font-family);
+	font-size: var(--medium-font-size-2);
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+
+body {
+	/* 뷰포트 크기 설정 */
+	/* width: 1920px; */
+	/* 색상설정 */
+	background-color: var(--main-bg-color);
+}
+
+header,
+section,
+footer {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+}
+
+
+/* **************** INC 영역 **************** */
+/* ----- HEADER ------*/
+header {
+	/* 플랙스박스 속성 이용한 배치*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* 색상 + 선*/
+	color: var(--main-color);
+	border-bottom: var(--basic-line) var(--main-color);
+}
+header>div{
+	width: 33%;
+	padding: var(--medium-space);
+}
+header i {
+	/* 아이콘 크기   */
+	font-size: var(--large-font-size-2);
+}
+header .header__logo{
+	text-align: center;
+}
+header .header__logo span {
+	/* 로고 */
+	font-family: var(--logo-font-family);
+	font-size: var(--large-font-size-1);
+	font-style: var(--logo-font-style);
+	color: var(--main-color-1);
+	margin-right: var(--medium-space);
+}
+header .header__icon{
+	text-align: right;
+}
+header .header__icon i {
+	margin-right: var(--medium-space);
+}
+/* ----- FOOTER ----- */
+footer{
+	background-color: var(--main-color);
+	color: var(--main-bg-color);
+
+	/* flexbox 세로 정렬 */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	
+	/* 여백 */
+	padding: var(--medium-space) 0;
+}
+footer .footer__icon i{
+	margin: 0 var(--large-space);
+	font-size: var(--medium-font-size-3);
+}
+footer .footer__info{
+	margin-top: var(--medium-space);
+	font-size: var(--small-font-size-1);
+	text-align: center;
+}
+footer .footer__info span{
+	text-align: center;
+}
+
+
+
+/* ----- TITLE ------*/
+.title{
+	text-align: center;
+}
+.title__bar{ 
+	/* 타이틀 박스 설정 */
+	margin: var(--large-space) var(--medium-space);
+	padding: var(--medium-space) 0;
+	background-color: var(--bg-color-lightBlue-1);
+	border-radius: var(--strong-radius);
+	box-shadow: var(--basic-shadow);
+}
+.title__bar span{
+	/* 타이틀 폰트 설정 */
+	font-size: var(--large-font-size-3);
+	color: var(--main-color);
+	font-weight: bold;
+}
+
+/* ----- BOARD ------*/
+/* BOARD BAR */
+.board__bar{
+	margin-top: var(--large-space);
+	width: 100%;
+	text-align: center;
+	/* bar 요소 정렬 */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* 하단 border */
+	border-bottom: var(--bold-line) var(--ct-color-gray-dark) ;
+}
+.board__bar .board__nav{
+	/* nav 요소 정렬 */
+	display: flex;
+}
+.board__bar .board__nav li{
+	/* nav 탭 세부 설정 */
+	background-color: var(--bg-color-gray);
+	box-shadow: var(--up-basic-shadow);
+	border-radius: var(--strong-radius) var(--strong-radius) 0 0;
+	/* 탭 크기 */
+	width: var(--button-width);
+	height: var(--button-height);
+	line-height: var(--button-height);
+	/* 폰트 */
+	font-size: var(--medium-font-size-3);
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.board__bar .board__nav .active{
+	/* 현재 선택된 탭만 대비 컬러 설정 */
+	background-color: var(--main-color);
+	color: var(--main-bg-color);
+}
+.board__bar .actionBtn{
+	/* 우측 버튼 설정 */
+	/* 세부 */
+	border-radius: var(--mild-radius);
+	background-color: var(--main-color);
+	color: var(--main-bg-color);
+	/* 크기 */
+	width: var(--button-width);
+	height: calc( var(--button-height) - 8px);
+	line-height: calc( var(--button-height) - 8px);
+	font-weight: bold;
+	font-size: var(--small-font-size-1);
+}
+
+/* BOARD CONTENT */
+.board__content{
+	/* board box */
+	border: var(--dotted-lind) var(--ct-color-gray-dark);
+	margin: var(--large-space) var(--medium-space);
+	padding: var(--medium-space);
+}
+.board__content .content__title {
+	/* 리스트 정렬 */
+	display: flex;
+	/* 하단 border */
+	border-bottom: var(--basic-line) var(--ct-color-gray-dark);
+}
+.board__content .content__list{
+	/* 리스트 정렬 */
+	display: flex;
+	flex-wrap: wrap;
+}
+.board__content .content__title li,
+.board__content .content__list li{
+	/* 각 칸의 넓이 설정 */
+	width: 6%;
+	/*  border */
+	border-right: var(--dotted-lind) var(--ct-color-gray-light);
+	border-bottom: var(--dotted-lind) var(--ct-color-gray-light);
+	/* 말줄임표 처리 */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* 폰트*/
+	font-size: var(--medium-font-size-3);
+	/* 정렬 */
+	text-align: center;
+	line-height: var(--large-font-size-3);
+	padding: 0 var(--small-space);
+}
+.board__content .content__title li:nth-child(5n+2){
+	/* 제목칸 */
+	width: 62%;
+}
+.board__content .content__list li:nth-child(5n+2){
+	/* 제목칸 */
+	width: 62%;
+	text-align: left;
+}
+.board__content .content__title li:nth-child(5n+3),
+.board__content .content__list li:nth-child(5n+3),
+.board__content .content__title li:nth-child(5n+4),
+.board__content .content__list li:nth-child(5n+4){
+	/* 작성일, 작성자 */
+	width: 10%;
+}
+.board__content .content__title li:nth-child(5n+5),
+.board__content .content__list li:nth-child(5n+5){
+	/* 마지막 border-right 없애기 */
+	border-right: none;
+}
+
+/* BOARD PAGING */
+.board__bottom .board__page{
+	display: flex;
+	justify-content: center;
+	/* font */
+	font-size: var(--small-font-size-1);
+	color: var(--ct-color-gray-light);
+	/* 여백 설정 */
+	margin-top: calc(var(--medium-space)*2);
+}
+.board__bottom .board__page li{
+	width: 5%;
+}
+.board__bottom .board__page li:first-child,
+.board__bottom .board__page li:last-child,
+.board__bottom .board__page .active{
+	color: var(--ct-color-gray-dark);
+}
+
