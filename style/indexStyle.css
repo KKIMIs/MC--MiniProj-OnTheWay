@@ -81,9 +81,9 @@ body {
 	background-color: var(--main-bg-color);
 }
 
-header,
-section,
-footer {
+.wrapper, 
+nav,
+section{
 	width: var(--main-center-ratio);
 	margin: 0 auto;
 }
@@ -93,24 +93,27 @@ a {
 	color: inherit;
 	font-size: inherit;
 }
-
+i{
+	cursor: pointer;
+}
 /* **************** INC 영역 **************** */
 /* ----- HEADER ------*/
-header {
-	/* 플랙스박스 속성 이용한 배치*/
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
+header{
 	/* 색상 + 선*/
 	color: var(--main-color);
 	border-bottom: var(--basic-line) var(--main-color);
 }
-header>div{
+header .wrapper {
+	/* 플랙스박스 속성 이용한 배치*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header>div>div{
 	width: 20%;
 	padding: var(--medium-space);
 }
-header>div:nth-child(3n+2){
+header>div>div:nth-child(2){
 	width: 60%;
 }
 header i {
@@ -133,6 +136,28 @@ header .header__icon{
 }
 header .header__icon i {
 	margin-right: var(--medium-space);
+}
+
+/* ----- NAV ------ */
+
+nav>ul{
+	display: none;
+	position: absolute;
+	z-index: 10;
+	background-color: var(--bg-color-lightBlue-1);
+	width: 10vw;
+}
+nav>ul>li{
+	padding: 5%;
+	border-bottom: var(--basic-line) var(--bg-color-blue-2);
+	font-size: var(--medium-font-size-3);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+nav>ul>li:hover{
+	color: var(--main-bg-color);
+	background-color: var(--main-color);
 }
 /* ----- FOOTER ----- */
 footer{
@@ -160,6 +185,16 @@ footer .footer__info{
 footer .footer__info span{
 	text-align: center;
 }
+/* **** events ***** */
+header .header__menu>i:hover, 
+.header__icon>i:hover,
+.header__logo:hover{
+	pointer-events : auto;
+	color: var(--bg-color-blue-1);
+}
+
+
+
 
 
 /* **************** MAIN PAGE **************** */
@@ -168,7 +203,7 @@ footer .footer__info span{
 	/* 상단 배경 설정 */
 	height: 60vh;
 	overflow: hidden;
-	background: url("img/river-view.jpg") center center;
+	background: url("../img/river-view.jpg") center center;
 	/* background-size: var(--viewPort-width); */
 	background-size: cover;
 }
@@ -243,6 +278,10 @@ footer .footer__info span{
 	color: var(--ct-color-gray-dark);
 	/* font-size: var(--medium-font-size-2); */
 }
+.Itnr .input__box{
+	/* 날짜 입력창 설정 */
+	width: 44%;
+}
 .search .input__wrapper{
 	/* 현재 위치 검색창 스타일 */
 	width:100%;
@@ -269,7 +308,18 @@ footer .footer__info span{
 	text-align: center;
 	margin-top: var(--medium-space);
 }
-
+/* ***** event ****** */
+.search .button:hover{
+	/* 버튼 호버 */
+	background-color: var(--bg-color-blue-2);
+}
+.search input:focus,
+.search select:focus {
+	outline: var(--basic-line)var(--bg-color-blue-2);
+}
+.search input:focus + label {
+	color:var(--bg-color-blue-2);
+}
 /* ----- Setting ----- */
 /* banner titles */
 .title{
@@ -298,27 +348,52 @@ footer .footer__info span{
 	width:10%;
 	font-size: var(--title-font-size);
 }
-.weather__list .weather__info{
+.weather__list .wVertical{
+	flex-direction: columm;
 	width: 70%;
-	/* 날씨 정보 정렬 */
+}
+.weather__list .weather__info_1,
+.weather__list .weather__info_2{
+	/* 날씨 정보 가로 정렬 */
 	display: flex;
 	justify-content: space-between;
+	/* 오른쪽으로 넘친 정보  */
+	overflow: scroll; 
+	/* flex-wrap: wrap; */
+	width: 100%;
 }
-.weather__list .weather__info .weather_detail{
-	/* 아이콘-기온-도시 이름 정렬 */
+.weather__list .weather__info_1 .weather__detail,
+.weather__list .weather__info_2 .weather__detail{
+	/* 아이콘-기온-도시 이름 세로 정렬 */
 	display: flex;
 	flex-direction: column;
+	margin: var(--medium-space);
+	/* 좌우 이동 */
+	position:relative;
+	left: 0;
 }
-.weather__list .weather__info .weather__detail i{
-	font-size: 8vw;
+.weather__list .weather__info_1 .weather__detail img,
+.weather__list .weather__info_2 .weather__detail img{
+	/* 날씨 아이콘 */
+	width: 7.6vw; 
 	margin-bottom: var(--medium-space);
+	background-color: var(--ct-color-gray-light);
+	border-radius: 50%;
+	box-shadow: var(--basic-shadow);
 }
-.weather__list .weather__info .weather__detail .wTemp{
+.weather__list .weather__info_1 .weather__detail .wTemp,
+.weather__list .weather__info_2 .weather__detail .wTemp{
 	color: var(--ct-color-gray-dark);
+}
+.weather__page {
+	display:flex;
+	justify-content: center;
 }
 .weather__page i{
+	/* 날씨페이지  */
 	font-size: var(--small-font-size-1);
 	color: var(--ct-color-gray-dark);
+	margin: var(--medium-space);
 }
 
 /* ----- THEME BANNER ----- */
@@ -424,6 +499,9 @@ footer .footer__info span{
 }
 
 /* ----- FESTIVAL BANNER ----- */
+.festival{
+	text-align: center;
+}
 .festival>.festival__title{
 		/* 제목 */
 		text-align: center;
@@ -431,7 +509,6 @@ footer .footer__info span{
 }
 .festival__list{
 	display: flex;
-	margin-bottom: var(--large-space);
 }
 .festival__list li{
 	margin: calc(var(--medium-space)*2);
@@ -441,6 +518,7 @@ footer .footer__info span{
 	flex-direction: column;
 	font-size: var(--small-font-size-1);
 	color: var(--ct-color-gray-dark);
+	text-align: left;
 }
 .festival__list .festival__info img{
 	width: 100%;
@@ -471,3 +549,11 @@ footer .footer__info span{
 	color: var(--ct-color-gray-dark);
 	overflow: auto;
 }
+.festival__page i{
+	/* 배너페이지  */
+	font-size: var(--small-font-size-1);
+	color: var(--ct-color-gray-dark);
+	margin-bottom: var(--large-space);
+}
+
+

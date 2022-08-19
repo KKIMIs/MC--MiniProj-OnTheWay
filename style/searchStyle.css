@@ -1,0 +1,473 @@
+:root {
+	/* 변수 선언 
+    **************** FONT VARIABLES **************** 
+    */
+
+	/* font-family */
+	--basic-font-family: roboto, sans-serif;
+	--logo-font-family: bely, serif;
+
+	/* font-style */
+	--logo-font-style: italic;
+
+	/* font-size */
+	--title-font-size: 55px;
+	--large-font-size-1: 30px;
+	--large-font-size-2: 25px;
+	--large-font-size-3: 22px;
+	--medium-font-size-1: 20px;
+	--medium-font-size-2: 18px;
+	--medium-font-size-3: 15px;
+	--small-font-size-1: 10px;
+
+	/* **************** COLOR VARIABLES ****************
+    */
+	/* 메인 요소 컬러 + 배경색  */
+	--main-color: #4f6083;
+	--main-bg-color: #fafafa;
+
+	/* 요소 배경색 */
+	--bg-color-gray: #f3f4f2;
+	--bg-color-lightBlue-1: #e1e8ef;
+	--bg-color-lightBlue-2: #ecf3f8;
+	--bg-color-blue-1: #AABDD0;
+	--bg-color-blue-2: #5e7ca0;
+
+	/* 기타 회색  */
+	--ct-color-gray-light: #c5c9ca;
+	--ct-color-gray-dark: #717171;
+
+	/* 그림자 속성 */
+	--basic-shadow: 0px 3px 6px #00000029;
+	--up-basic-shadow: 0px -3px 6px #00000029;
+	--bigger-shadow: 0px 15px 8px #00000029;
+
+	/* **************** SPACING VARIABLES **************** */
+	--super-space: 10vh;
+	--large-space: 24px;
+	--medium-space: 10px;
+	--small-space: 6px;
+
+	--button-width: 110px;
+	--button-height: 30px;
+
+	--viewPort-width: 1440px;
+	--main-center-width: 1200px;
+	--main-center-ratio: 65%;
+
+	/* **************** BORDER VARIABLES **************** */
+	--strong-radius: 20px;
+	--mild-radius: 8px;
+	--basic-line: 1px solid;
+	--bold-line:4px solid;
+	--dotted-line:1px dotted;
+	--bold-dotted-line:3px dotted;
+}
+
+
+/* * BASIC Settings *
+*/
+* {
+	/* 기본설정 */
+	font-family: var(--basic-font-family);
+	font-size: var(--medium-font-size-2);
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+body {
+	/* 색상설정 */
+	background-color: var(--main-bg-color);
+}
+
+header,
+section,
+footer {
+	width: var(--main-center-ratio);
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+}
+
+/* **************** INC 영역 **************** */
+/* ----- HEADER ------*/
+header {
+	/* 플랙스박스 속성 이용한 배치*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* 색상 + 선*/
+	color: var(--main-color);
+	border-bottom: var(--basic-line) var(--main-color);
+}
+header>div{
+	width: 20%;
+	padding: var(--medium-space);
+}
+header>div:nth-child(3n+2){
+	width: 60%;
+}
+header i {
+	/* 아이콘 크기   */
+	font-size: var(--large-font-size-2);
+}
+header .header__logo{
+	text-align: center;
+}
+header .header__logo span {
+	/* 로고 */
+	font-family: var(--logo-font-family);
+	font-size: var(--large-font-size-1);
+	font-style: var(--logo-font-style);
+	color: var(--main-color-1);
+	margin-right: var(--medium-space);
+}
+header .header__icon{
+	text-align: right;
+}
+header .header__icon i {
+	margin-right: var(--medium-space);
+}
+/* ----- FOOTER ----- */
+footer{
+	background-color: var(--main-color);
+	color: var(--main-bg-color);
+
+	/* flexbox 세로 정렬 */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	
+	/* 여백 */
+	padding: var(--medium-space) 0;
+}
+footer .footer__icon i{
+	margin: 0 var(--large-space);
+	font-size: var(--medium-font-size-3);
+}
+footer .footer__info{
+	margin-top: var(--medium-space);
+	font-size: var(--small-font-size-1);
+	text-align: center;
+}
+footer .footer__info span{
+	text-align: center;
+}
+
+
+/* **************** MAIN PAGE **************** */
+/* ----- TOP ------ */
+.top{
+	/* 상단 배경 설정 */
+	height: 60vh;
+	overflow: hidden;
+	background: url("/img/river-view.jpg") center center;
+	/* background-size: var(--viewPort-width); */
+	background-size: cover;
+}
+.top>div{
+	width: inherit;
+	height: 100%;
+
+	/* 배경효과 블러 + 밝기	*/
+	-webkit-backdrop-filter: blur(0.3px);
+  backdrop-filter: blur(0.3px);
+	-webkit-backdrop-filter: brightness(.8);
+  backdrop-filter: brightness(.8);
+	
+	/* title font */
+	text-align: center;
+	font-size: var(--large-font-size-3);
+	color: var(--main-bg-color);
+
+	/* spacing */
+	padding-top: var(--super-space);
+}
+.top .main_title{
+	/* title font - main */
+	font-family: var(--logo-font-family);
+	font-style: var(--logo-font-style);
+	font-size: var(--title-font-size);
+
+	/* spacing */
+	margin-bottom: var(--medium-space);
+}
+
+/* ----- SEARCH ----- */
+.search{
+	/* 배경 설정 */
+	background-color: var(--bg-color-lightBlue-2);
+	border-radius: calc(var(--strong-radius)*2);
+	box-shadow: var(--bigger-shadow);
+	/* 위치 설정 */
+	/* position: absolute;
+	top: calc(var(--super-space)*(5));
+	left: 8.5%; */
+	position: relative;
+	top: calc(var(--super-space)*(-2));
+}
+.search ul{
+	/* 요소 정렬 */
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	width: 100%;
+	/* 여백 */
+	padding: 5% 5%;
+	/* padding: var(--large-space) calc(var(--large-space)*3); */
+}
+.search ul>li{
+	width:26%;
+	color: var(--ct-color-gray-dark);
+	font-size: var(--medium-font-size-1);
+	padding: 2%;
+}
+.search .search__title{
+	/* 검색 제목*/
+	color: black;
+	/* font-size: var(--large-font-size-3); */
+	font-weight: bold;
+	margin-bottom: var(--medium-space);
+}
+.search .input__box{
+	/* 입력창 설정	*/
+	width:100%;
+	border: none;
+	color: var(--ct-color-gray-dark);
+	/* font-size: var(--medium-font-size-2); */
+}
+.search .input__wrapper{
+	/* 현재 위치 검색창 스타일 */
+	width:100%;
+	background-color: white;
+	/* 정렬 */
+	display: flex;
+	justify-content: space-between;
+}
+.search .input__wrapper i{
+	color: black;
+}
+.search .input__box:first-child{
+	width:70%;
+}
+.search .button{
+	/* 바로검색 버튼 */
+	width: 100%;
+	height: 70%;
+	border: none;
+	border-radius: var(--strong-radius);
+	background-color: var(--main-color);
+	color: var(--main-bg-color);
+	font-size: var(--large-font-size-3);
+	text-align: center;
+	margin-top: var(--medium-space);
+}
+
+/* ----- Setting ----- */
+/* banner titles */
+.title{
+	font-size: var(--large-font-size-2);
+	font-weight: bold;
+	margin: var(--medium-space) 0;
+}
+
+/* ----- WEATHER BANNER -----*/
+.weather{
+	text-align: center;
+}
+.weather__title{
+	margin-bottom: var(--large-space);
+}
+.weather__list{
+	/* 날씨 정보 창 정렬 */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: var(--large-space);
+}
+.weather__list>i{
+	/* 화살표	*/
+	color: var(--ct-color-gray-dark);
+	width:10%;
+	font-size: var(--title-font-size);
+}
+.weather__list .weather__info{
+	width: 70%;
+	/* 날씨 정보 정렬 */
+	display: flex;
+	justify-content: space-between;
+}
+.weather__list .weather__info .weather_detail{
+	/* 아이콘-기온-도시 이름 정렬 */
+	display: flex;
+	flex-direction: column;
+}
+.weather__list .weather__info .weather__detail i{
+	font-size: 8vw;
+	margin-bottom: var(--medium-space);
+}
+.weather__list .weather__info .weather__detail .wTemp{
+	color: var(--ct-color-gray-dark);
+}
+.weather__page i{
+	font-size: var(--small-font-size-1);
+	color: var(--ct-color-gray-dark);
+}
+
+/* ----- THEME BANNER ----- */
+.theme{
+	/* 배경 */
+	width: 100%;
+	background-color:var(--bg-color-lightBlue-1);
+	margin: calc(var(--large-space)*2) 0;
+	padding: var(--large-space) 0;
+	box-shadow: var(--bigger-shadow);
+}
+.theme__title{
+	/* 제목 */
+	text-align: center;
+	margin: calc(var(--large-space)*1) 0;
+}
+.theme__list{
+	/* 메인 콘텐츠 영역*/
+	width: var(--main-center-ratio);
+	margin: 0 auto;
+}
+.theme__list>li{
+	/* 가로 정렬 */
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	padding: var(--medium-space) var(--large-space);
+}
+.theme__list>li>div{
+	/* 테마칸 설정 */
+	margin: var(--medium-space);
+	padding: var(--medium-space);
+	width: 45%;
+	height: inherit;
+}
+.theme__list>li .line{
+	/* 중앙선 */
+	padding: 0;
+	width: 0px;
+	height: 27vh;
+	border-right: var(--bold-dotted-line) var(--main-color);
+}
+.theme__list .card{
+	/* 테마카드 */
+	/* 세로 정렬 */
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	/* 배경 */
+	background-color: var(--main-bg-color);
+	box-shadow: var(--basic-shadow);
+	border-radius: var(--strong-radius);
+}
+.theme__list .card img{
+	width: 80%;
+	max-width: 18vw;
+	border-radius: var(--mild-radius);
+	margin-top: var(--large-space);	
+}
+.theme__list .card .card__detail{
+	width: 80%;
+	font-size:var(--large-font-size-3);
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: var(--large-space);	
+}
+.theme__list .card .card__detail i{
+	font-size:var(--large-font-size-3);
+}
+.theme__list .descript{
+	/* 테마설명 */
+	/* 세로 정렬 */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 35vh;
+}
+.theme__list .descript .desc__title{
+	/* 설명 제목 */
+	font-size: var(--large-font-size-3);
+	font-weight: bold;
+	margin: var(--medium-space) 0;
+}
+.theme__list .descript .desc__content{
+	/* 설명 */
+	height: 70%;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.theme__list .descript .desc__detail{
+	/* 더보기 */
+	float: right;
+	text-decoration: underline ;
+	color: var(--ct-color-gray-dark);
+	font-size: var(--small-font-size-1);
+}
+.theme__list li:nth-child(2n+2){
+	/* 테마칸 반전 정렬 */
+	flex-direction: row-reverse;
+}
+
+/* ----- FESTIVAL BANNER ----- */
+.festival>.festival__title{
+		/* 제목 */
+		text-align: center;
+		margin: calc(var(--large-space)*3) 0 var(--large-space) 0;
+}
+.festival__list{
+	display: flex;
+	margin-bottom: var(--large-space);
+}
+.festival__list li{
+	margin: calc(var(--medium-space)*2);
+}
+.festival__list .festival__info{
+	display: flex;
+	flex-direction: column;
+	font-size: var(--small-font-size-1);
+	color: var(--ct-color-gray-dark);
+}
+.festival__list .festival__info img{
+	width: 100%;
+	height: 20vh;
+}
+.festival__list .festival__info i{
+	/* 좋아요 버튼 */
+	color: var(--main-bg-color);
+	font-size:var(--large-font-size-2);
+	align-self: flex-end;
+	/* 위치 이동 */
+	position: relative;
+	top: calc(var(--large-space)*-1.5);
+	left: calc(var(--large-space)*-0.5);
+}
+.festival__list .festival__info .fTitle{
+	/* 축제명 */
+	font-size: var(--medium-font-size-3);
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: var(--medium-space) ;
+	color: black;
+	border-bottom: var(--basic-line) var(--main-color);
+}
+.festival__list .festival__info .fDetail{
+	/* 축제설명 */
+	font-size: var(--medium-font-size-3);
+	color: var(--ct-color-gray-dark);
+	overflow: auto;
+}

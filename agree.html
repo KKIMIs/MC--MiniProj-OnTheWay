@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://use.typekit.net/mss6mty.css">
+			
+		<!-- 스타일 적용 -->
+		<link rel="stylesheet" href="agreeStyle.css">
+		<!-- 링크 추가해서 스타일 적용 -->
+		
+			
+		<script src="https://kit.fontawesome.com/ab847241fd.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+		<script src="/script/indexScript.js" type="text/javascript"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwSEWBBCWNZzbZ6_ItQYHifWBj_gVVgWQ&region=kr"></script>
+		
+			<title>OnTheWay</title>
+	</head>
+	<body>
+			<!-- HEADER -->
+			<header>
+				<div class="wrapper">
+					<div class="header__menu">
+						<i class="fa-solid fa-bars"></i>
+					</div>
+					<div class="header__logo">
+						<a href="/">
+							<i class="fa-solid fa-plane-departure"></i>
+							<span>On The Way</span>
+						</a>
+					</div>
+					<div class="header__icon">
+						<!-- <i class="fa-solid fa-arrow-right-from-bracket"></i> -->
+						<a href=""><i class="fa-regular fa-bell"></i></a>
+						<a href="/mypage/myTouristList"><i class="fa-regular fa-user"></i></a>
+					</div>
+				</div>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="#">홈페이지 소개</a></li>
+					<li><a href="/userBoard/userBoardList">게시판</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보보호정책</a></li>
+					<li><a href="#">고객문의</a></li>
+				</ul>
+			</nav>
+	
+			<section class="title">
+				<div class="title__bar">
+					<span>[회원가입] 약관동의</span>
+				</div>
+				${u_vo.google_id }
+				${u_vo.google_username }
+			</section>
+			
+			<section class="board">	
+				<ul class ="board__flow">
+					<li><i class="fa-solid fa-angle-up"></i></li>
+					<li><div class="flow active">1. 약관동의</div><li>
+					<li><div class="flow">2. 정보 입력</div><li>
+					<li><div class="flow">3. 가입 완료</div><li>
+					<li><i class="fa-solid fa-angle-down"></i></li>
+				</ul>
+				<div class="board__content">
+					<form id="" class="" action="">
+						<span class="aTitle">1.이용약관 동의</span>
+						<textarea>제1장 총칙
+제1조(목적)이 약관은 회사가 온라인으로 제공하는 디지털콘텐츠(이하 "콘텐츠"라고 한다) 및 제반서비스의 이용과 관련하여 회사와 이용자와의 권리, 의무 및 책임사항 등을 규정함을 목적으로 합니다.
+제2조(정의) 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.   
+1. "회사"라 함은 "콘텐츠" 산업과 관련된 경제활동을 영위하는 자로서 콘텐츠 및 제반서비스를 제공하는 자를 말합니다. 
+2. "이용자"라 함은 "회사"의 사이트에 접속하여 이 약관에 따라 "회사"가 제공하는 "콘텐츠" 및 제반서비스를 이용하는 회원 및 비회원을 말합니다. 
+3. "회원"이라 함은 "회사"와 이용계약을 체결하고 "이용자" 아이디(ID)를 부여받은 "이용자"로서 "회사"의 정보를 지속적으로 제공받으며 "회사"가 제공하는 서비스를 지속적으로 이용할 수 있는 자를 말합니다. 
+4. "비회원"이라 함은 "회원"이 아니면서 "회사"가 제공하는 서비스를 이용하는 자를 말합니다. 
+5. "콘텐츠"라 함은 정보통신망이용촉진 및 정보보호 등에 관한 법률 제2조 제1항 제1호의 규정에 의한 정보통신망에서 사용되는 부호·문자·음성·음향·이미지 또는 영상 등으로 표현된 자료 또는 정보로서, 그 보존 및 이용에 있어서 효용을 높일 수 있도록 전자적 형태로 제작 또는 처리된 것을 말합니다. 
+6. "아이디(ID)"라 함은 "회원"의 식별과 서비스이용을 위하여 "회원"이 정하고 "회사"가 승인하는 문자 또는 숫자의 조합을 말합니다. 
+7. "비밀번호(PASSWORD)"라 함은 "회원"이 부여받은 "아이디"와 일치되는 "회원"임을 확인하고 비밀보호를 위해 "회원" 자신이 정한 문자 또는 숫자의 조합을 말합니다. 
+						</textarea>
+
+						<div class="agree__check">
+							<input type="radio" name="check_1" id="check_1_no" value="no" checked>
+							<label for="check_1_no">미동의</label>&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="check_1" id="check_1_yes" value="yes">
+							<label for="check_1_yes">동의</label>
+						</div>
+
+						<span class="aTitle">2.개인정보처리방침 동의</span>
+						<textarea>사이트가 취급하는 모든 개인정보는 관련법령에 근거하거나 정보주체의 동의에 의하여 수집 보유 및 처리되고 있습니다.
+『개인정보보호법률』은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 사이트는 이러한 법령의 규정에 따라 개인정보의 처리목적에 필요한 최소한의 개인정보를 수집 보유 및 처리하는 개인정보를 공공업무의 적절한 수행과 국민의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.
+						</textarea>
+
+						<div class="agree__check">
+							<input type="radio" name="check_2" id="check_2_no" value="no" checked>
+							<label for="check_2_no">미동의</label>&nbsp;&nbsp;&nbsp;
+							<input type="radio" name="check_2" id="check_2_yes" value="yes">
+							<label for="check_2_yes">동의</label>
+						</div>
+
+						<div class="agree__check">
+							<input type="checkbox" id="allChk" class="allChk"/>
+							<label for="allChk">모두 동의</label>
+						</div>
+						<div>
+							<input type="submit" class="nextBtn" value="다음"/>
+						</div>
+					</form>
+				</div>
+			</section>
+
+
+    <!-- FOOTER -->
+    <footer>
+		<div class="footer__icon">
+			<a href="#"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+			<a href="#"><i class="fa-solid fa-share-from-square"></i></a>
+		</div>
+		<div class="footer__info">
+			<a href="#">About Us</a> | 
+			<a href="#">Support</a> |
+			<a href="#">Term of Use</a> |
+			<a href="#">Private Policy</a> <br>
+			©2022 NoviceCoders. All Right Reserved.
+		</div>
+	</footer>
+</body>
+</html>

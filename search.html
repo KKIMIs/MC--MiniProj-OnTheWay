@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mss6mty.css">
+	<link rel="stylesheet" href="sampleStyle.css">
+	<script src="https://kit.fontawesome.com/ab847241fd.js" crossorigin="anonymous"></script>
+    <title>OnTheWay</title>
+</head>
+<body>
+    <!-- HEADER -->
+	<header>
+		<div class="header__menu">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+		<div class="header__logo">
+			<a href="#">
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>On The Way</span>
+			</a>
+		</div>
+		<div class="header__icon">
+			<!-- <i class="fa-solid fa-arrow-right-from-bracket"></i> -->
+			<i class="fa-regular fa-bell"></i>
+			<i class="fa-regular fa-user"></i>
+		</div>
+	</header>
+
+		<!-- TITLE + SEARCH AREA -->
+    <div class="top">
+			<div>
+				<div class="main_title">On The Way</div>
+				지금 당신이 향해야 할 곳은 바로 여기
+			</div>
+		</div>
+    <section class="search">
+
+				<!-- SEARCH FORM -->
+				<form method="" action="" >
+					<ul>
+						<li>
+								<div class="search__title">여행 방법</div>
+								<input type="radio" name="tripPlan" id="roundTrip" value="rountTrip" checked>
+								<label for="roundTrip">왕복</label>&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="tripPlan" id="oneWay" value="oneWay">
+								<label for="oneWay">편도</label>
+						</li>
+
+						<li>
+							<label for="curLoc" >
+								<div class="search__title">현재 위치</div>
+							</label>
+							<div class="input__wrapper">
+								<input class="input__box" type="text" id="curLoc" name="curLoc">
+								<div>
+									<i class="fa-solid fa-location-crosshairs"></i>
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<label for="intinerary" >
+								<div class="search__title">여행 날짜</div>
+							</label>
+							<input type="date" class="input__box" id="intinerary" name="intinerary" 
+							value="2022-08-16" min="2022-08-16" max="2022-12-16"> 
+							<!-- 차후 현재 날짜에 따라 변경할 것 -->
+						</li>
+
+						<li>
+							<div class="search__title">이동수단</div>
+							<select class="input__box" id="transfort" >
+								<option value="train">기차</option>
+								<option value="car">차량</option>
+								<option value="bus">버스</option>
+								<option value="walk">도보</option>
+							</select>
+						</li>
+
+						<li>
+							<div class="search__title">이동거리</div>
+							<select class="input__box" id="distance" >
+								<option value="range_1">0km ~ 10Km</option>
+								<option value="range_1">10Km ~ 30Km</option>
+								<option value="range_1">30Km ~ 100Km</option>
+								<option value="range_1">100Km ~ 200Km</option>
+								<option value="range_1">200Km ~ 300Km</option>
+								<option value="range_1">300Km ~ 400Km</option>
+								<option value="range_1">400Km ~ </option>
+							</select>
+						</li>
+
+						<li>
+							<input type="submit" value="바로 검색" class="button">
+						</li>
+					</ul>
+				</form>
+		</section>
+		
+		section.
+		<!-- FESTIVAL BANNER -->
+		<section class="festival">
+			<div class="festival__title">
+				<span class="title">지금 전국 각지에서는?</span>
+				<br>요즘 핫한 축제 알아보기
+			</div>
+			<ul class="festival__list">
+				<!-- festival list -->
+				<li>
+					<!-- festival info -->
+					<div class="festival__info">
+						<img src="img/city-view.jpg" alt="" >
+						<i class="fa-regular fa-heart"></i>
+						<span class="fTitle">2022 목포문화재야행</span>
+						<span class="fDetail">전라남도 목포시 <br></span>
+						2022. 7. 29. ~ 30. / 18:00 ~ 22:00
+					</div>
+				</li>
+				<li>
+					<!-- festival info -->
+					<div class="festival__info">
+						<img src="img/city-view.jpg" alt="" >
+						<i class="fa-regular fa-heart"></i>
+						<span class="fTitle">2022 목포문화재야행</span>
+						<span class="fDetail">전라남도 목포시 <br></span>
+						2022. 7. 29. ~ 30. / 18:00 ~ 22:00
+					</div>
+				</li><li>
+					<!-- festival info -->
+					<div class="festival__info">
+						<img src="img/city-view.jpg" alt="" >
+						<i class="fa-regular fa-heart"></i>
+						<span class="fTitle">2022 목포문화재야행</span>
+						<span class="fDetail">전라남도 목포시 <br></span>
+						2022. 7. 29. ~ 30. / 18:00 ~ 22:00
+					</div>
+				</li><li>
+					<!-- festival info -->
+					<div class="festival__info">
+						<img src="img/city-view.jpg" alt="" >
+						<i class="fa-regular fa-heart"></i>
+						<span class="fTitle">2022 목포문화재야행</span>
+						<span class="fDetail">전라남도 목포시 <br></span>
+						2022. 7. 29. ~ 30. / 18:00 ~ 22:00
+					</div>
+				</li>
+			</ul>
+		</section>
+
+    <!-- FOOTER -->
+    <footer>
+		<div class="footer__icon">
+			<a href="#"><i class="fa-brands fa-facebook"></i></a>
+			<a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+			<a href="#"><i class="fa-solid fa-share-from-square"></i></a>
+		</div>
+		<div class="footer__info">
+			<a href="#">About Us</a> | 
+			<a href="#">Support</a> |
+			<a href="#">Term of Use</a> |
+			<a href="#">Private Policy</a> <br>
+			©2022 NoviceCoders. All Right Reserved.
+		</div>
+	</footer>
+</body>
+</html>

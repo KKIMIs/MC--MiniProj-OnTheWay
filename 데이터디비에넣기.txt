@@ -1,0 +1,70 @@
+https://ttoj.github.io/study/db/intro/MySQL-csv-import/
+해당 블로그 보시면서 하시면 됩니다.
+--- 여기서부터 보세요 ------ 
+2) 데이터 import 하기
+추후 수정 예정
+
+(1) 환경변수 설정
+
+(2) local_infile 설정Permalink
+# 1. cmd 환경에서 mysql 접속
+mysql -u root -p --local-infile
+
+# 2. local_infile 설정 변경
+show global variables like 'local_infile';
+set global local_infile=true;
+
+# 3. mysql 접속 해제
+exit
+12
+
+
+해당 설정을 변경해주지 않으면 다음과 같은 에러가 발생한다.
+
+ERROR 3948 (42000): Loading local data is disabled; this must be enabled on both the client and server sides
+
+
+(3) 데이터셋 importPermalink
+# 1. cmd 환경에서 mysql 접속
+mysql -u root -p --local-infile
+
+# 2. local_infile 설정 확인
+show global variables like 'local_infile';
+
+# 3. 데이터베이스 선택
+use 데이터베이스명;
+
+# 4. 데이터셋 import
+LOAD DATA LOCAL INFILE "절대경로\\data.csv"
+INTO TABLE dbName.tableName
+FIELDS TERMINATED BY "|"   # csv 구분자 입력
+LINES TERMINATED BY "\n"
+IGNORE 1 ROWS              # 첫 행이 컬럼명인 경우, 해당 행 저장 X
+;
+
+
+아래 코드 쓰기 전에 
+travel.script에서 ******* 사이에 있는 스크립트 실행하시고 하셔야합니다.
+
+-----> tourist import 할 때 예시 
+LOAD DATA LOCAL INFILE "절대경로\\tourist_data.csv"
+INTO travel.touristSpot
+FIELDS TERMINATED BY "|"   # csv 구분자 입력
+LINES TERMINATED BY "\n"
+IGNORE 1 ROWS   
+
+-----> tourist 할 때 예시 
+LOAD DATA LOCAL INFILE "절대경로\\festival_data.csv"
+INTO travel.festival
+FIELDS TERMINATED BY ","   # csv 구분자 입력 (위와 구분자 다릅니다)
+LINES TERMINATED BY "\n"
+IGNORE 1 ROWS   
+
+
+
+
+
+데이터셋 경로 입력 시, \\를 2번 작성한 이유는 아래 에러가 발생했기 때문이다.
+
+참고자료: [stackoverflow] load data local infile ERROR 2 file not found
+ERROR 2 (HYOOO): File '절대경로\data.csv' not found (Errcode:2)
